@@ -2,122 +2,14 @@
    GOOGLE FONTS
 =========================== */
 
-:root {
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap");
 
-  /* ===========================
-      COLORS
-  =========================== */
+/* ===========================
+   CSS FILES
+=========================== */
 
-  --primary-color: #7c3aed;
-  --primary-hover: #8b5cf6;
-
-  --secondary-color: #06b6d4;
-
-  --accent-color: #f59e0b;
-
-  --success-color: #22c55e;
-
-  --danger-color: #ef4444;
-
-  /* ===========================
-      BACKGROUND
-  =========================== */
-
-  --bg-color: #050816;
-
-  --bg-secondary: #0f172a;
-
-  --card-bg: rgba(255,255,255,0.05);
-
-  --glass-bg: rgba(255,255,255,0.08);
-
-  /* ===========================
-      TEXT
-  =========================== */
-
-  --white: #ffffff;
-
-  --text-color: #f8fafc;
-
-  --text-light: #94a3b8;
-
-  --text-gray: #64748b;
-
-  /* ===========================
-      BORDER
-  =========================== */
-
-  --border-color: rgba(255,255,255,0.12);
-
-  /* ===========================
-      GRADIENTS
-  =========================== */
-
-  --gradient-primary:
-  linear-gradient(
-      135deg,
-      #7c3aed,
-      #06b6d4
-  );
-
-  --gradient-dark:
-  linear-gradient(
-      180deg,
-      #050816,
-      #0f172a
-  );
-
-  /* ===========================
-      SHADOWS
-  =========================== */
-
-  --shadow-sm:
-  0 5px 20px rgba(0,0,0,.20);
-
-  --shadow-md:
-  0 15px 40px rgba(0,0,0,.30);
-
-  --shadow-lg:
-  0 20px 60px rgba(0,0,0,.45);
-
-  /* ===========================
-      GLOW
-  =========================== */
-
-  --glow:
-
-  0 0 25px rgba(124,58,237,.45);
-
-  /* ===========================
-      RADIUS
-  =========================== */
-
-  --radius-sm:10px;
-
-  --radius-md:18px;
-
-  --radius-lg:30px;
-
-  --radius-full:999px;
-
-  /* ===========================
-      CONTAINER
-  =========================== */
-
-  --container-width:1200px;
-
-  /* ===========================
-      TRANSITION
-  =========================== */
-
-  --transition:.35s ease;
-
-  /* ===========================
-      FONT
-  =========================== */
-
-  --heading-font:"Poppins",sans-serif;
-
-  --body-font:"Inter",sans-serif;
-
-}
+@import "./styles/variables.css";
+@import "./styles/global.css";
+@import "./styles/utilities.css";
+@import "./styles/animations.css";
+@import "./styles/responsive.css";
