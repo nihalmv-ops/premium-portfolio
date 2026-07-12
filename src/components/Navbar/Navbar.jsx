@@ -1,16 +1,22 @@
-import { useEffect, useState } from "react";
-import { HiMenuAlt3, HiX } from "react-icons/hi";
-import { motion } from "framer-motion";
-import { navLinks } from "./navbarData";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
 
-const Navbar = () => {
+const navLinks = [
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Skills", href: "#skills" },
+  { name: "Projects", href: "#projects" },
+  { name: "Contact", href: "#contact" },
+];
+
+function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
+      setScrolled(window.scrollY > 30);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -19,119 +25,101 @@ const Navbar = () => {
   }, []);
 
   return (
-    <motion.nav
+    <motion.header
       initial={{ y: -80 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "glass border-b border-white/10 py-4"
-          : "py-6"
+          ? "bg-slate-950/90 backdrop-blur-xl shadow-lg border-b border-cyan-500/10"
+          : "bg-transparent"
       }`}
     >
-      <div className="container-custom flex items-center justify-between">
+      <div className="max-w-7xl mx-auto h-20 px-6 flex items-center justify-between">
 
         {/* Logo */}
-<a
-  href="#home"
-  className="text-3xl font-extrabold tracking-tight select-none"
->
-  <span className="bg-gradient-to-r from-violet-950 via-fuchsia-960 to-cyan-400 bg-clip-text text-transparent">
-    N
-  </span>
-  <span className="bg-gradient-to-r from-violet-960 via-white-950 to-cyan-500 bg-clip-text text-transparent">MV</span>
-</a>
+        <motion.a
+          href="#home"
+          whileHover={{ scale: 1.05 }}
+          className="text-3xl font-bold tracking-wide"
+        >
+          <span className="text-white">Nihal</span>
+          <span className="text-cyan-400">.</span>
+        </motion.a>
 
         {/* Desktop Menu */}
-
-        <ul className="hidden lg:flex gap-10">
-
+        <ul className="hidden lg:flex items-center gap-10">
           {navLinks.map((item) => (
-            <li key={item.id}>
-
+            <li key={item.name} className="group relative">
               <a
-                href={`#${item.id}`}
-                onClick={() => setActive(item.id)}
-                className={`relative text-[15px] transition ${
-                  active === item.id
-                    ? "text-violet-400"
-                    : "text-gray-300 hover:text-white"
-                }`}
+                href={item.href}
+                className="text-slate-300 hover:text-cyan-400 duration-300"
               >
-                {item.title}
-
-                {active === item.id && (
-                  <motion.span
-                    layoutId="underline"
-                    className="absolute left-0 -bottom-2 h-[2px] w-full bg-violet-500 rounded-full"
-                  />
-                )}
+                {item.name}
               </a>
 
+              <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
             </li>
           ))}
-
         </ul>
 
-        {/* Resume Button */}
-
-        <a
+        {/* Hire Button */}
+        <motion.a
           href="#contact"
-          className="hidden lg:block btn-primary"
+          whileHover={{ scale: 1.08 }}
+          whileTap={{ scale: 0.95 }}
+          className="hidden lg:flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 text-white font-semibold shadow-lg hover:shadow-cyan-500/40 transition"
         >
           Hire Me
-        </a>
+        </motion.a>
 
-        {/* Mobile Icon */}
-
+        {/* Mobile Menu Button */}
         <button
-          className="lg:hidden text-3xl mt-5"
           onClick={() => setMenuOpen(!menuOpen)}
+          className="lg:hidden text-white text-3xl"
         >
-          {menuOpen ? <HiX /> : <HiMenuAlt3 />}
+          {menuOpen ? <HiOutlineX /> : <HiOutlineMenuAlt3 />}
         </button>
-
       </div>
 
       {/* Mobile Menu */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.3 }}
+            className="lg:hidden bg-slate-900/95 backdrop-blur-xl border-t border-white/10"
+          >
+            <ul className="flex flex-col items-center gap-8 py-10">
 
-      {menuOpen && (
+              {navLinks.map((item) => (
+                <li key={item.name}>
+                  <a
+                    href={item.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="text-lg text-slate-300 hover:text-cyan-400 transition"
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))}
 
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="glass lg:hidden mt-4 mx-5 rounded-2xl"
-        >
+              <a
+                href="#contact"
+                onClick={() => setMenuOpen(false)}
+                className="px-6 py-3 rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 text-white font-semibold"
+              >
+                Hire Me
+              </a>
 
-          <ul className="flex flex-col p-6 gap-6">
-
-            {navLinks.map((item) => (
-
-              <li key={item.id}>
-
-                <a
-                  href={`#${item.id}`}
-                  onClick={() => {
-                    setActive(item.id);
-                    setMenuOpen(false);
-                  }}
-                  className="text-lg text-gray-300 hover:text-violet-400"
-                >
-                  {item.title}
-                </a>
-
-              </li>
-
-            ))}
-
-          </ul>
-
-        </motion.div>
-
-      )}
-
-    </motion.nav>
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
   );
-};
+}
 
 export default Navbar;
