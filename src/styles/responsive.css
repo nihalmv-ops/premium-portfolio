@@ -1,0 +1,132 @@
+/* ==========================================
+   LARGE DESKTOP
+   1400px
+========================================== */
+
+@media (max-width:1400px){
+
+.container{
+    width:min(92%,1200px);
+}
+
+}
+
+
+/* ==========================================
+   DESKTOP
+   1200px
+========================================== */
+
+@media (max-width:1200px){
+
+.container{
+    width:92%;
+}
+
+.section-title{
+    font-size:3rem;
+}
+
+.grid-4{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+
+/* ==========================================
+   LAPTOP
+   992px
+========================================== */
+
+@media (max-width:992px){
+
+section{
+    padding:80px 0;
+}
+
+.grid-3,
+.grid-2{
+    grid-template-columns:1fr;
+}
+
+.section-title{
+    font-size:2.5rem;
+}
+
+.section-subtitle{
+    margin-bottom:50px;
+}
+
+}
+
+
+/* ==========================================
+   TABLET
+   768px
+========================================== */
+
+@media (max-width:768px){
+
+.container{
+    width:94%;
+}
+
+section{
+    padding:70px 0;
+}
+
+.section-title{
+    font-size:2.2rem;
+}
+
+.btn{
+    padding:13px 28px;
+}
+
+}
+
+
+/* ==========================================
+   MOBILE
+   576px
+========================================== */
+
+@media (max-width:576px){
+
+.section-title{
+    font-size:2rem;
+}
+
+.section-subtitle{
+    font-size:.95rem;
+}
+
+.btn{
+    width:100%;
+}
+
+.glass-card,
+.card{
+    padding:22px;
+}
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+   400px
+========================================== */
+
+@media (max-width:400px){
+
+.section-title{
+    font-size:1.7rem;
+}
+
+body{
+    font-size:.95rem;
+}
+
+}
