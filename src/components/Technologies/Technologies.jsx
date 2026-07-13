@@ -37,37 +37,50 @@ const containerVariants = {
   visible: {
     transition: {
       staggerChildren: 0.12,
+      delayChildren: 0.1,
     },
   },
 };
+
 const cardVariants = {
   hidden: {
     opacity: 0,
-    y: 80,
-    scale: 0.9,
+    y: 70,
+    scale: 0.85,
+    rotateX: 25,
   },
+
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
+    rotateX: 0,
+
     transition: {
-      duration: 0.6,
+      duration: 0.7,
       ease: [0.22, 1, 0.36, 1],
     },
   },
-}
+};
 
 function Technologies() {
   return (
     <section className="technologies" id="skills">
       <div className="container">
-<motion.div
-  className="section-header"
-  initial={{ opacity: 0, y: 40 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6 }}
-  viewport={{ once: false, amount: 0.3 }}
->
+
+        <motion.div
+          className="section-header"
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{
+            once: false,
+            amount: 0.25,
+          }}
+          transition={{
+            duration: 0.8,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+        >
           <p className="section-tag">TECH STACK</p>
 
           <h2 className="section-title">
@@ -80,35 +93,38 @@ function Technologies() {
           </p>
         </motion.div>
 
-       <motion.div
-  className="tech-grid"
-  variants={containerVariants}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: false, amount: 0.2 }}
->
+        <motion.div
+          className="tech-grid"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{
+            once: false,
+            amount: 0.15,
+          }}
+        >
           {techs.map((tech) => (
             <motion.div
               className="tech-card"
               key={tech.name}
               variants={cardVariants}
               whileHover={{
-                y: -10,
+                y: -12,
                 scale: 1.05,
-                transition: {
-                  duration: 0.2,
-                },
+                rotate: 1,
+              }}
+              whileTap={{
+                scale: 0.96,
               }}
             >
               <motion.div
                 className="tech-icon"
                 whileHover={{
-                  rotate: 10,
+                  rotate: 360,
                   scale: 1.2,
                 }}
                 transition={{
-                  type: "spring",
-                  stiffness: 300,
+                  duration: 0.6,
                 }}
               >
                 {tech.icon}
