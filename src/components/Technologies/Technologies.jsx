@@ -1,4 +1,6 @@
 import "./Technologies.css";
+import { motion } from "framer-motion";
+
 import {
   FaReact,
   FaHtml5,
@@ -8,7 +10,13 @@ import {
   FaGithub,
   FaNodeJs,
 } from "react-icons/fa";
-import { SiTailwindcss, SiExpress, SiMongodb, SiVite } from "react-icons/si";
+
+import {
+  SiTailwindcss,
+  SiExpress,
+  SiMongodb,
+  SiVite,
+} from "react-icons/si";
 
 const techs = [
   { icon: <FaReact />, name: "React" },
@@ -24,12 +32,42 @@ const techs = [
   { icon: <SiVite />, name: "Vite" },
 ];
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 80,
+    scale: 0.9,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+}
+
 function Technologies() {
   return (
     <section className="technologies" id="skills">
       <div className="container">
-
-        <div className="section-header">
+<motion.div
+  className="section-header"
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: false, amount: 0.3 }}
+>
           <p className="section-tag">TECH STACK</p>
 
           <h2 className="section-title">
@@ -40,16 +78,46 @@ function Technologies() {
             Modern tools and technologies I use to build fast,
             responsive and scalable web applications.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="tech-grid">
+       <motion.div
+  className="tech-grid"
+  variants={containerVariants}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: false, amount: 0.2 }}
+>
           {techs.map((tech) => (
-            <div className="tech-card" key={tech.name}>
-              <div className="tech-icon">{tech.icon}</div>
+            <motion.div
+              className="tech-card"
+              key={tech.name}
+              variants={cardVariants}
+              whileHover={{
+                y: -10,
+                scale: 1.05,
+                transition: {
+                  duration: 0.2,
+                },
+              }}
+            >
+              <motion.div
+                className="tech-icon"
+                whileHover={{
+                  rotate: 10,
+                  scale: 1.2,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 300,
+                }}
+              >
+                {tech.icon}
+              </motion.div>
+
               <h3>{tech.name}</h3>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
       </div>
     </section>

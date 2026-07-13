@@ -1,6 +1,7 @@
 import "./Hero.css";
 import { FaArrowRight, FaDownload } from "react-icons/fa";
 
+
 function Hero() {
   return (
     <section className="hero" id="home">
