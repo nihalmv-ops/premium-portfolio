@@ -79,27 +79,21 @@ responsive and scalable web applications.
 
 
 <div className="contact-buttons">
-
-
 <a
-
-href="mailto:yourmail@gmail.com"
-
-className="contact-btn primary"
-
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=nihalmv.dev@gmail.com"
+  target="_blank"
+  rel="noreferrer"
+  className="contact-btn primary"
 >
-
-<FaEnvelope/>
-
-Email Me
-
+  <FaEnvelope />
+  Email Me
 </a>
 
 
 
 <a
 
-href="https://github.com/"
+href="https://github.com/nihalmv-ops"
 
 target="_blank"
 
@@ -117,8 +111,7 @@ GitHub
 
 <a
 
-href="https://linkedin.com/"
-
+href="https://www.linkedin.com/in/nihal-mv-dev/"
 target="_blank"
 
 className="contact-btn"

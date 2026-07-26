@@ -1,7 +1,7 @@
 import portfolioImg from "../assets/projects/project 2.jpg";
-import travelImg from "../assets/projects/project1.jpg";
+import smallproject from "../assets/projects/project1.jpg";
 import clipboardImg from "../assets/projects/project3.jpg";
- import contact from "../assets/projects/contact.jpg";
+ 
 
 
 const projects = [
@@ -11,54 +11,29 @@ const projects = [
 
         featured: true,
 
-        title: "Developer Portfolio",
+        title: "Hospital Website | Frontend Project",
 
         description:
-            "A premium React portfolio with Framer Motion animations, reusable components and responsive design.",
-
+          "A modern responsive hospital website built using HTML, CSS, and JavaScript with clean UI, interactive components, and a user-friendly healthcare experience.",
         image: portfolioImg,
 
         technologies: [
-            "React",
-            "CSS",
-            "Framer Motion",
-            "Vite"
+          "HTML5",
+       "CSS3",
+       "JavaScript",
+      "Responsive Design"
         ],
 
         github:
-            "https://github.com/nihalmv-ops",
+            "https://github.com/nihalmv-ops/hospital",
 
         demo:
-            "https://your-demo-link.com",
+            "https://nihalmv-ops.github.io/hospital/",
     },
+
 
     {
         id: 2,
-
-        featured: true,
-
-        title: "Travel Landing Page",
-
-        description:
-            "Modern responsive landing page with smooth animations and reusable UI components.",
-
-        image: travelImg,
-
-        technologies: [
-            "React",
-            "CSS",
-            "Responsive"
-        ],
-
-        github:
-            "https://github.com/nihalmv-ops",
-
-        demo:
-            "https://your-demo-link.com",
-    },
-
-    {
-        id: 3,
 
         featured: true,
 
@@ -85,28 +60,29 @@ const projects = [
 
     
     {
-        id: 4,
+        id: 3,
 
         featured: false,
 
-        title: "Clipboard Landing Page",
+        title: "Personal Link Hub",
 
         description:
-            "Frontend Mentor challenge built with clean HTML, CSS and React best practices.",
+            "A modern personal bio link platform that brings social profiles, portfolio links, and important resources together in a clean and responsive interface.",
 
-        image: contact,
+        image: smallproject,
 
         technologies: [
             "HTML",
-            "CSS",
-            "React"
+            "CSS3",
+            "Responsive Design",
+            "React.js"
         ],
 
         github:
-            "https://github.com/nihalmv-ops",
+            "https://github.com/nihalmv-ops/sole",
 
         demo:
-            "https://your-demo-link.com",
+            "https://sole-sand.vercel.app/",
     }
 
 
