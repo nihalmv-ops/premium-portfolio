@@ -4,6 +4,8 @@ import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Technologies from "./components/Technologies/Technologies";
 import Projects from "./components/Projects/Projects";
+import Journey from "./components/Journey/Journey";
+import Contact from "./components/Contact/Contact";
 
 function App() {
   return (
@@ -14,8 +16,11 @@ function App() {
 
       <main>
         <Hero />
-        <Technologies />
-        <Projects />
+        <Journey />
+         <Projects />
+        <Technologies /> 
+        <Contact />
+        
       </main>
     </>
   );

@@ -1,85 +1,222 @@
 import "./Hero.css";
-import { FaArrowRight, FaDownload } from "react-icons/fa";
+
+import { motion } from "framer-motion";
+
+import SlideLeft from "../Animation/SlideLeft";
+import SlideRight from "../Animation/SlideRight";
+
+import {
+  FaArrowRight,
+  FaDownload
+} from "react-icons/fa";
 
 
 function Hero() {
+
   return (
+
     <section className="hero" id="home">
 
       <div className="container hero-container">
 
-        {/* Left Side */}
-        <div className="hero-content">
 
-          <div className="hero-badge">
-            <span></span>
-            Available For Work
+        {/* LEFT SIDE */}
+
+        <SlideLeft>
+
+          <div className="hero-content">
+
+
+            <motion.div
+              className="hero-badge"
+
+              initial={{
+                opacity:0,
+                y:-30
+              }}
+
+              animate={{
+                opacity:1,
+                y:0
+              }}
+
+              transition={{
+                delay:.4,
+                duration:.6
+              }}
+            >
+
+              <span></span>
+
+              Available For Work
+
+            </motion.div>
+
+
+
+            <h1>
+
+              Frontend
+
+              <br />
+
+              <span>
+                React Developer
+              </span>
+
+            </h1>
+
+
+
+            <p>
+
+              I build modern, responsive and
+              high-performance web applications
+              using React, JavaScript and modern
+              website technologies.
+
+            </p>
+
+
+
+            <motion.div
+
+              className="hero-buttons"
+
+              initial={{
+                opacity:0,
+                y:40
+              }}
+
+              animate={{
+                opacity:1,
+                y:0
+              }}
+
+              transition={{
+                delay:.6,
+                duration:.7
+              }}
+
+            >
+
+
+              <a
+                href="#projects"
+                className="btn btn-primary"
+              >
+
+                View Projects
+
+                <FaArrowRight />
+
+              </a>
+
+
+
+              <a
+                href="/resume.pdf"
+                className="btn btn-secondary"
+              >
+
+                Resume
+
+                <FaDownload />
+
+              </a>
+
+
+            </motion.div>
+
+
           </div>
 
-          <h1>
-            Frontend
-            <br />
-            <span>React Developer</span>
-          </h1>
 
-          <p>
-            I build modern, responsive and high-performance web
-            applications using React, JavaScript and modern website
-            technologies.
-          </p>
+        </SlideLeft>
 
-          <div className="hero-buttons">
 
-            <a href="#projects" className="btn btn-primary">
-              View Projects
-              <FaArrowRight />
-            </a>
 
-            <a href="/resume.pdf" className="btn btn-secondary">
-              Resume
-              <FaDownload />
-            </a>
 
-          </div>
 
-         
+        {/* RIGHT SIDE */}
 
-        </div>
 
-        {/* Right Side */}
+        <SlideRight>
 
-        <div className="hero-code">
 
-          <div className="code-window">
+          <div className="hero-code">
 
-            <div className="window-top">
 
-              <span></span>
-              <span></span>
-              <span></span>
+            <motion.div
 
-            </div>
+              className="code-window"
 
-<pre>{`import React from "react";
+
+              animate={{
+
+                y:[0,-12,0]
+
+              }}
+
+
+              transition={{
+
+                duration:5,
+
+                repeat:Infinity,
+
+                ease:"easeInOut"
+
+              }}
+
+            >
+
+
+              <div className="window-top">
+
+                <span></span>
+
+                <span></span>
+
+                <span></span>
+
+              </div>
+
+
+
+<pre>
+{`import React from "react";
 
 const Developer = () => {
 
-   return (
-      <Portfolio />
-   );
+ return (
+   <Portfolio />
+ );
 
 }
 
-export default Developer;`}</pre>
+export default Developer;`}
+</pre>
+
+
+            </motion.div>
+
 
           </div>
 
-        </div>
+
+        </SlideRight>
+
+
 
       </div>
 
+
     </section>
+
   );
+
 }
+
 
 export default Hero;

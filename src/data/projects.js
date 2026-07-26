@@ -1,6 +1,8 @@
 import portfolioImg from "../assets/projects/project 2.jpg";
 import travelImg from "../assets/projects/project1.jpg";
 import clipboardImg from "../assets/projects/project3.jpg";
+ import contact from "../assets/projects/contact.jpg";
+
 
 const projects = [
 
@@ -58,7 +60,7 @@ const projects = [
     {
         id: 3,
 
-        featured: false,
+        featured: true,
 
         title: "Clipboard Landing Page",
 
@@ -78,7 +80,35 @@ const projects = [
 
         demo:
             "https://your-demo-link.com",
+    },
+
+
+    
+    {
+        id: 4,
+
+        featured: false,
+
+        title: "Clipboard Landing Page",
+
+        description:
+            "Frontend Mentor challenge built with clean HTML, CSS and React best practices.",
+
+        image: contact,
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "React"
+        ],
+
+        github:
+            "https://github.com/nihalmv-ops",
+
+        demo:
+            "https://your-demo-link.com",
     }
+
 
 ];
 
