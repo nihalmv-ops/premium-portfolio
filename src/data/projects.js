@@ -1,13 +1,43 @@
 import portfolioImg from "../assets/projects/project 2.jpg";
 import smallproject from "../assets/projects/project1.jpg";
-import clipboardImg from "../assets/projects/project3.jpg";
+import trachmartImg from "../assets/projects/project3.jpg";
+
  
 
 
 const projects = [
 
     {
-        id: 1,
+  id: 1,
+
+  featured: true,
+
+  title: "TrachMart - E-Commerce Store",
+
+  description:
+    "A modern responsive e-commerce application with product browsing, cart management, routing and reusable React components.",
+
+  image: trachmartImg,
+
+  technologies: [
+    "React.js",
+    "Vite",
+    "JavaScript",
+    "Tailwind CSS",
+    "Context API",
+    "React Router",
+    "Local Storage"
+  ],
+
+  github:
+    "https://github.com/nihalmv-ops/trachmartshop",
+
+  demo:
+    "https://trachmartshop.vercel.app/"
+},
+
+    {
+        id: 2,
 
         featured: true,
 
@@ -32,30 +62,7 @@ const projects = [
     },
 
 
-    {
-        id: 2,
-
-        featured: true,
-
-        title: "Clipboard Landing Page",
-
-        description:
-            "Frontend Mentor challenge built with clean HTML, CSS and React best practices.",
-
-        image: clipboardImg,
-
-        technologies: [
-            "HTML",
-            "CSS",
-            "React"
-        ],
-
-        github:
-            "https://github.com/nihalmv-ops",
-
-        demo:
-            "https://your-demo-link.com",
-    },
+    
 
 
     
@@ -72,10 +79,11 @@ const projects = [
         image: smallproject,
 
         technologies: [
-            "HTML",
+            "Vite",
+            "React.js",
             "CSS3",
             "Responsive Design",
-            "React.js"
+            
         ],
 
         github:
@@ -83,7 +91,9 @@ const projects = [
 
         demo:
             "https://sole-sand.vercel.app/",
-    }
+    },
+
+
 
 
 ];
