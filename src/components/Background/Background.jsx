@@ -1,11 +1,21 @@
 import "./Background.css";
 
-function Background() {
-  return (
-    <div className="background">
-      <div className="bg-circle"></div>
-    </div>
-  );
-}
+export default function Background(){
 
-export default Background;
+return(
+
+<div className="background">
+
+<div className="blob blob1"></div>
+
+<div className="blob blob2"></div>
+
+<div className="blob blob3"></div>
+
+<div className="noise"></div>
+
+</div>
+
+);
+
+}
