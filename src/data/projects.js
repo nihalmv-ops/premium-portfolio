@@ -88,10 +88,10 @@ const projects = [
     id: 4,
     featured: true,
 
-    title: "GoTravel - Travel Booking Website",
+    title: "Hospital & Dental Care Website",
 
     description:
-      "A modern and responsive travel booking website designed to provide a smooth travel-planning experience with destinations, packages, wishlist, bookings, notifications, and more. 🌍✈️",
+      "A modern, responsive healthcare website designed to provide patients with a smooth and professional online experience.",
 
     image: dentalclinic,
 
@@ -99,6 +99,8 @@ const projects = [
       "HTML",
       "CSS3",
       "JavaScript",
+      "Bootstrap",
+      "Github"
       
     ],
 
