@@ -1,0 +1,802 @@
+/* =================================
+   PROFESSIONAL LOADER
+================================= */
+
+.professional-loader {
+
+  position: fixed;
+  inset: 0;
+
+  z-index: 99999;
+
+  background: #050507;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+
+  overflow: hidden;
+}
+
+
+.loader-center {
+
+  width: min(420px, 80vw);
+
+  text-align: center;
+
+}
+
+
+.loader-logo {
+
+  font-size: 2rem;
+
+  font-weight: 700;
+
+  letter-spacing: 8px;
+
+  margin-bottom: 45px;
+
+}
+
+
+.loader-loading-text {
+
+  font-size: .65rem;
+
+  letter-spacing: 4px;
+
+  color: rgba(255,255,255,.45);
+
+  margin-bottom: 15px;
+
+}
+
+
+.loader-progress {
+
+  width: 100%;
+
+  height: 2px;
+
+  background:
+    rgba(255,255,255,.12);
+
+  overflow: hidden;
+
+}
+
+
+.loader-progress-bar {
+
+  height: 100%;
+
+  width: 0%;
+
+  background: #fff;
+
+  box-shadow:
+    0 0 15px rgba(255,255,255,.8);
+
+}
+
+
+.loader-bottom-row {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 12px;
+
+  font-size: .62rem;
+
+  letter-spacing: 2px;
+
+  color: rgba(255,255,255,.35);
+
+}
+
+
+.loader-bottom-row small {
+
+  font-size: .55rem;
+
+  margin-left: 2px;
+
+}
+
+
+.loader-corner {
+
+  position: absolute;
+
+  bottom: 25px;
+
+  left: 30px;
+
+  font-size: .55rem;
+
+  letter-spacing: 3px;
+
+  color: rgba(255,255,255,.25);
+
+}
+
+
+/* =================================
+   INTRO SCREEN
+================================= */
+
+.intro-screen {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 99998;
+
+  overflow: hidden;
+
+  background: #050507;
+
+  color: #fff;
+
+}
+
+
+/* =================================
+   PREMIUM BACKGROUND
+================================= */
+
+.intro-background {
+
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  background:
+
+    radial-gradient(
+      circle at 70% 40%,
+      rgba(124,58,237,.16),
+      transparent 35%
+    ),
+
+    radial-gradient(
+      circle at 20% 70%,
+      rgba(34,211,238,.08),
+      transparent 35%
+    ),
+
+    #050507;
+
+}
+
+
+/* Grid */
+
+.background-grid {
+
+  position: absolute;
+
+  inset: -100px;
+
+  opacity: .18;
+
+  background-image:
+
+    linear-gradient(
+      rgba(255,255,255,.06) 1px,
+      transparent 1px
+    ),
+
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.06) 1px,
+      transparent 1px
+    );
+
+  background-size: 60px 60px;
+
+  transform:
+
+    perspective(500px)
+    rotateX(60deg)
+    scale(1.5);
+
+  animation:
+
+    gridMove 15s linear infinite;
+
+}
+
+
+@keyframes gridMove {
+
+  from {
+
+    transform:
+      perspective(500px)
+      rotateX(60deg)
+      scale(1.5)
+      translateY(0);
+
+  }
+
+  to {
+
+    transform:
+      perspective(500px)
+      rotateX(60deg)
+      scale(1.5)
+      translateY(60px);
+
+  }
+
+}
+
+
+/* =================================
+   FLOATING GLOWS
+================================= */
+
+.background-glow {
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(80px);
+
+  pointer-events: none;
+
+}
+
+
+.glow-one {
+
+  width: 450px;
+
+  height: 450px;
+
+  right: 8%;
+
+  top: 15%;
+
+  background:
+    rgba(124,58,237,.12);
+
+  animation:
+    glowMove 8s ease-in-out infinite;
+
+}
+
+
+.glow-two {
+
+  width: 350px;
+
+  height: 350px;
+
+  left: 15%;
+
+  bottom: 10%;
+
+  background:
+    rgba(34,211,238,.07);
+
+  animation:
+    glowMove 10s ease-in-out infinite reverse;
+
+}
+
+
+@keyframes glowMove {
+
+  0%,
+  100% {
+
+    transform:
+      translate(0,0)
+      scale(1);
+
+  }
+
+  50% {
+
+    transform:
+      translate(40px,-30px)
+      scale(1.15);
+
+  }
+
+}
+
+
+/* =================================
+   NOISE
+================================= */
+
+.background-noise {
+
+  position: absolute;
+
+  inset: 0;
+
+  opacity: .025;
+
+  background-image:
+
+    url(
+      "data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"
+    );
+
+}
+
+
+/* =================================
+   OVERLAY
+================================= */
+
+.intro-overlay {
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.75) 0%,
+      rgba(0,0,0,.35) 55%,
+      rgba(0,0,0,.65) 100%
+    );
+
+}
+
+
+/* =================================
+   CENTER GLOW
+================================= */
+
+.intro-glow {
+
+  position: absolute;
+
+  width: 500px;
+
+  height: 500px;
+
+  left: 42%;
+
+  top: 50%;
+
+  transform:
+    translate(-50%,-50%);
+
+  background:
+
+    radial-gradient(
+      circle,
+      rgba(167,139,250,.12),
+      transparent 70%
+    );
+
+  filter: blur(20px);
+
+  pointer-events: none;
+
+}
+
+
+/* =================================
+   CONTENT
+================================= */
+
+.intro-content {
+
+  position: relative;
+
+  z-index: 5;
+
+  width: min(620px,90vw);
+
+  margin-left:
+    clamp(40px,10vw,150px);
+
+  padding-top: 22vh;
+
+}
+
+
+/* =================================
+   EYEBROW
+================================= */
+
+.hero-eyebrow {
+
+  margin: 0 0 15px;
+
+  color: #c4b5fd;
+
+  font-size: .78rem;
+
+  font-weight: 600;
+
+  letter-spacing: 5px;
+
+}
+
+
+/* =================================
+   TITLE
+================================= */
+
+.hero-title {
+
+  margin: 0;
+
+  font-size:
+    clamp(4rem,9vw,8rem);
+
+  line-height: .95;
+
+  font-weight: 800;
+
+  letter-spacing: -5px;
+
+  color: #fff;
+
+  text-shadow:
+    0 0 30px rgba(255,255,255,.08);
+
+}
+
+
+.hero-title span {
+
+  color: #a78bfa;
+
+  text-shadow:
+    0 0 25px rgba(167,139,250,.55);
+
+}
+
+
+/* =================================
+   DESCRIPTION
+================================= */
+
+.hero-description {
+
+  max-width: 540px;
+
+  margin: 28px 0 32px;
+
+  color:
+    rgba(255,255,255,.68);
+
+  font-size: 1rem;
+
+  line-height: 1.8;
+
+}
+
+
+/* =================================
+   ENTER BUTTON
+================================= */
+
+.hero-button {
+
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 15px 25px;
+
+  border-radius: 999px;
+
+  border:
+    1px solid rgba(255,255,255,.25);
+
+  background:
+    rgba(255,255,255,.07);
+
+  backdrop-filter:
+    blur(15px);
+
+  color: #fff;
+
+  font-size: .82rem;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition:
+
+    border-color .3s ease,
+
+    box-shadow .3s ease,
+
+    background .3s ease;
+
+}
+
+
+.hero-button::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+
+    linear-gradient(
+      110deg,
+      transparent 20%,
+      rgba(255,255,255,.25) 50%,
+      transparent 80%
+    );
+
+  transform:
+    translateX(-120%);
+
+  transition:
+    transform .7s ease;
+
+}
+
+
+.hero-button:hover::before {
+
+  transform:
+    translateX(120%);
+
+}
+
+
+.hero-button:hover {
+
+  border-color:
+    rgba(167,139,250,.8);
+
+  background:
+    rgba(124,58,237,.18);
+
+  box-shadow:
+
+    0 0 25px
+    rgba(124,58,237,.25),
+
+    0 0 60px
+    rgba(124,58,237,.12);
+
+}
+
+
+.hero-button-arrow {
+
+  font-size: 1.1rem;
+
+  transition:
+    transform .3s ease;
+
+}
+
+
+.hero-button:hover
+.hero-button-arrow {
+
+  transform:
+    translateX(5px);
+
+}
+
+
+/* =================================
+   FOOTER
+================================= */
+
+.intro-footer {
+
+  position: absolute;
+
+  z-index: 5;
+
+  bottom: 28px;
+
+  left: 40px;
+
+  right: 40px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  font-size: .55rem;
+
+  letter-spacing: 3px;
+
+  color:
+    rgba(255,255,255,.5);
+
+}
+
+
+/* =================================
+   ENTER FLASH
+================================= */
+
+.enter-transition {
+
+  position: absolute;
+
+  z-index: 100;
+
+  width: 100vw;
+
+  height: 100vw;
+
+  left: 50%;
+
+  top: 50%;
+
+  transform:
+    translate(-50%,-50%);
+
+  border-radius: 50%;
+
+  background:
+
+    radial-gradient(
+      circle,
+      rgba(255,255,255,.95) 0%,
+      rgba(167,139,250,.5) 20%,
+      rgba(0,0,0,0) 70%
+    );
+
+  pointer-events: none;
+
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width:768px) {
+
+  .intro-content {
+
+    margin-left: 28px;
+
+    padding-top: 30vh;
+
+    width:
+      calc(100% - 56px);
+
+  }
+
+
+  .hero-title {
+
+    font-size:
+      clamp(3.5rem,15vw,6rem);
+
+    letter-spacing: -3px;
+
+  }
+
+
+  .hero-description {
+
+    font-size: .9rem;
+
+  }
+
+
+  .intro-footer {
+
+    left: 25px;
+
+    right: 25px;
+
+  }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width:480px) {
+
+  .loader-center {
+
+    width: 75vw;
+
+  }
+
+
+  .loader-logo {
+
+    font-size: 1.5rem;
+
+  }
+
+
+  .intro-content {
+
+    margin-left: 22px;
+
+    padding-top: 25vh;
+
+  }
+
+
+  .hero-eyebrow {
+
+    font-size: .65rem;
+
+    letter-spacing: 3px;
+
+  }
+
+
+  .hero-title {
+
+    font-size: 4rem;
+
+  }
+
+
+  .hero-description {
+
+    font-size: .85rem;
+
+    line-height: 1.7;
+
+  }
+
+
+  .hero-button {
+
+    padding: 13px 20px;
+
+    font-size: .72rem;
+
+  }
+
+
+  .intro-footer {
+
+    left: 20px;
+
+    right: 20px;
+
+    font-size: .45rem;
+
+  }
+
+}
