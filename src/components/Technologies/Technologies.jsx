@@ -16,24 +16,48 @@ import {
   SiExpress,
   SiMongodb,
   SiVite,
+  SiThreedotjs,
+  SiGreensock,
 } from "react-icons/si";
 
 const techs = [
   { icon: <FaReact />, name: "React" },
+
   { icon: <FaJs />, name: "JavaScript" },
+
   { icon: <FaHtml5 />, name: "HTML5" },
+
   { icon: <FaCss3Alt />, name: "CSS3" },
+
   { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+
   { icon: <FaNodeJs />, name: "Node.js" },
+
   { icon: <SiExpress />, name: "Express.js" },
+
   { icon: <SiMongodb />, name: "MongoDB" },
+
   { icon: <FaGitAlt />, name: "Git" },
+
   { icon: <FaGithub />, name: "GitHub" },
+
   { icon: <SiVite />, name: "Vite" },
+
+  // NEW
+  { icon: <SiThreedotjs />, name: "Three.js" },
+
+  { icon: <SiGreensock />, name: "GSAP" },
+
+  // Drei
+  {
+    icon: <SiThreedotjs />,
+    name: "Drei",
+  },
 ];
 
 const containerVariants = {
   hidden: {},
+
   visible: {
     transition: {
       staggerChildren: 0.12,
@@ -66,76 +90,119 @@ const cardVariants = {
 function Technologies() {
   return (
     <section className="technologies" id="skills">
+
       <div className="container">
+
+        {/* SECTION HEADER */}
 
         <motion.div
           className="section-header"
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
+
+          initial={{
+            opacity: 0,
+            y: 60,
+          }}
+
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+
           viewport={{
             once: false,
             amount: 0.25,
           }}
+
           transition={{
             duration: 0.8,
             ease: [0.22, 1, 0.36, 1],
           }}
         >
-          <p className="section-tag">TECH STACK</p>
+
+          <p className="section-tag">
+            TECH STACK
+          </p>
 
           <h2 className="section-title">
             Technologies I Work With
           </h2>
 
           <p className="section-subtitle">
-            Modern tools and technologies I use to build fast,
-            responsive and scalable web applications.
+            Modern tools and technologies I use to build
+            fast, responsive, scalable and interactive
+            web applications.
           </p>
+
         </motion.div>
+
+
+        {/* TECH GRID */}
 
         <motion.div
           className="tech-grid"
+
           variants={containerVariants}
+
           initial="hidden"
+
           whileInView="visible"
+
           viewport={{
             once: false,
             amount: 0.15,
           }}
         >
+
           {techs.map((tech) => (
+
             <motion.div
               className="tech-card"
+
               key={tech.name}
+
               variants={cardVariants}
+
               whileHover={{
                 y: -12,
                 scale: 1.05,
                 rotate: 1,
               }}
+
               whileTap={{
                 scale: 0.96,
               }}
             >
+
               <motion.div
                 className="tech-icon"
+
                 whileHover={{
                   rotate: 360,
                   scale: 1.2,
                 }}
+
                 transition={{
                   duration: 0.6,
                 }}
               >
+
                 {tech.icon}
+
               </motion.div>
 
-              <h3>{tech.name}</h3>
+
+              <h3>
+                {tech.name}
+              </h3>
+
             </motion.div>
+
           ))}
+
         </motion.div>
 
       </div>
+
     </section>
   );
 }

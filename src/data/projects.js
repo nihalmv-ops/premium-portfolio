@@ -1,101 +1,112 @@
-import portfolioImg from "../assets/projects/project 2.jpg";
-import smallproject from "../assets/projects/project1.jpg";
-import trachmartImg from "../assets/projects/project3.jpg";
-
- 
-
-
+import smallproject from "../assets/projects/techmart.jpg";
+import portfolioImg from "../assets/projects/ni.jpg";
+import gotravel from "../assets/projects/gotravel.jpg";
+import dentalclinic from "../assets/projects/project3.jpg";
 const projects = [
+  {
+    id: 1,
+    featured: true,
+
+    title: "TrachMart - E-Commerce Store",
+
+    description:
+      "A modern responsive e-commerce application with product browsing, cart management, routing, and reusable React components.",
+
+    image: smallproject,
+
+    technologies: [
+      "React.js",
+      "Vite",
+      "JavaScript",
+      "Tailwind CSS",
+      "Context API",
+      "React Router",
+      "Local Storage",
+    ],
+
+    github: "https://github.com/nihalmv-ops/trachmartshop",
+
+    demo: "https://trachmartshop.vercel.app/",
+  },
+
+  {
+    id: 2,
+    featured: true,
+
+    title: "3D Portfolio",
+
+    description:
+      "A modern space-themed portfolio built with React, Three.js, and smooth animations, designed to create an immersive and interactive web experience.",
+
+    image: portfolioImg,
+
+    technologies: [
+      "React",
+      "CSS3",
+      "JavaScript",
+      "Three.js",
+      "Vite",
+      "GSAP",
+      "GitHub",
+    ],
+
+    github: "https://github.com/nihalmv-ops/space-portfolio",
+
+    demo: "https://space-portfolio-qrgk.vercel.app/",
+  },
+
+  {
+    id: 3,
+    featured: true,
+
+    title: "GoTravel - Travel Booking Website",
+
+    description:
+      "A modern and responsive travel booking website designed to provide a smooth travel-planning experience with destinations, packages, wishlist, bookings, notifications, and more. 🌍✈️",
+
+    image: gotravel,
+
+    technologies: [
+      "React",
+      "CSS3",
+      "JavaScript",
+      "React Router",
+      "Vite",
+      "Context API",
+      "Local Storage",
+      "Framer Motion",
+      "Swiper",
+      "React Toastify",
+    ],
+
+    github: "https://github.com/nihalmv-ops/rgotravel",
+
+    demo: "https://rgotravel.vercel.app/",
+  },
 
     {
-  id: 1,
+    id: 4,
+    featured: true,
 
-  featured: true,
+    title: "GoTravel - Travel Booking Website",
 
-  title: "TrachMart - E-Commerce Store",
+    description:
+      "A modern and responsive travel booking website designed to provide a smooth travel-planning experience with destinations, packages, wishlist, bookings, notifications, and more. 🌍✈️",
 
-  description:
-    "A modern responsive e-commerce application with product browsing, cart management, routing and reusable React components.",
+    image: dentalclinic,
 
-  image: trachmartImg,
+    technologies: [
+      "HTML",
+      "CSS3",
+      "JavaScript",
+      
+    ],
 
-  technologies: [
-    "React.js",
-    "Vite",
-    "JavaScript",
-    "Tailwind CSS",
-    "Context API",
-    "React Router",
-    "Local Storage"
-  ],
+    github: "https://github.com/nihalmv-ops/hospital/",
 
-  github:
-    "https://github.com/nihalmv-ops/trachmartshop",
-
-  demo:
-    "https://trachmartshop.vercel.app/"
-},
-
-    {
-        id: 2,
-
-        featured: true,
-
-        title: "Hospital Website | Frontend Project",
-
-        description:
-          "A modern responsive hospital website built using HTML, CSS, and JavaScript with clean UI, interactive components, and a user-friendly healthcare experience.",
-        image: portfolioImg,
-
-        technologies: [
-          "HTML5",
-       "CSS3",
-       "JavaScript",
-      "Responsive Design"
-        ],
-
-        github:
-            "https://github.com/nihalmv-ops/hospital",
-
-        demo:
-            "https://nihalmv-ops.github.io/hospital/",
-    },
-
-
-    
-
-
-    
-    {
-        id: 3,
-
-        featured: false,
-
-        title: "Personal Link Hub",
-
-        description:
-            "A modern personal bio link platform that brings social profiles, portfolio links, and important resources together in a clean and responsive interface.",
-
-        image: smallproject,
-
-        technologies: [
-            "Vite",
-            "React.js",
-            "CSS3",
-            "Responsive Design",
-            
-        ],
-
-        github:
-            "https://github.com/nihalmv-ops/sole",
-
-        demo:
-            "https://sole-sand.vercel.app/",
-    },
-
-
-
-
+    demo: "https://nihalmv-ops.github.io/hospital/",
+  },
 ];
 
 export default projects;
+
