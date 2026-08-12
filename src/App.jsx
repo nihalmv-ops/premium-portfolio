@@ -1,31 +1,14 @@
-import "./App.css";
+import SpaceScene from "./components/Space/SpaceScene";
 
-import Background from "./components/Background/Background";
-import Cursor from "./components/Cursor/Cursor";
-import Loader from "./components/Loader/Loader";
+function App() {
+  return (
+    <>
+      <SpaceScene />
 
-import useLenis from "./hooks/useLenis";
-
-function App(){
-
-useLenis();
-
-return(
-
-<>
-
-<Loader/>
-
-<Cursor/>
-
-<Background/>
-
-<div style={{height:"500vh"}}></div>
-
-</>
-
-);
-
+      <div style={{ height: "600vh" }}>
+      </div>
+    </>
+  );
 }
 
 export default App;
