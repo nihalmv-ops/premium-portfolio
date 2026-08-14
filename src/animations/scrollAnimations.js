@@ -4,54 +4,54 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export function initScrollAnimations() {
-  const ctx = gsap.context(() => {
-    gsap.to(".hero-content", {
+  const context = gsap.context(() => {
+    /* =====================================
+       HERO CONTENT
+    ===================================== */
+
+    gsap.to("#home > div", {
       y: -120,
+      opacity: 0.2,
+
+      scrollTrigger: {
+        trigger: "#home",
+        start: "top top",
+        end: "bottom top",
+        scrub: 1,
+      },
+    });
+
+    /* =====================================
+       HERO TITLE
+    ===================================== */
+
+    gsap.to(".hero-title", {
+      scale: 1.08,
       opacity: 0,
-      ease: "none",
 
       scrollTrigger: {
         trigger: "#home",
         start: "top top",
         end: "80% top",
-        scrub: true,
+        scrub: 1,
       },
     });
 
+    /* =====================================
+       JUNGLE SCENE
+    ===================================== */
+
     gsap.to(".jungle-scene", {
       scale: 1.08,
-      y: 40,
-      ease: "none",
 
       scrollTrigger: {
         trigger: "#home",
         start: "top top",
-        end: "100% top",
-        scrub: true,
+        end: "bottom top",
+        scrub: 1,
       },
     });
-
-    gsap.fromTo(
-      "#projects h2",
-      {
-        y: 80,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-
-        scrollTrigger: {
-          trigger: "#projects",
-          start: "top 75%",
-          end: "top 35%",
-          scrub: true,
-        },
-      }
-    );
   });
 
-  return () => {
-    ctx.revert();
-  };
+  return context;
 }

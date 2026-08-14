@@ -5,19 +5,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function useSmoothScroll() {
+function useSmoothScroll() {
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
       smoothWheel: true,
-      syncTouch: false,
-      wheelMultiplier: 0.9,
       touchMultiplier: 1,
     });
-
-    const update = (time) => {
-      lenis.raf(time * 1000);
-    };
 
     const handleScroll = () => {
       ScrollTrigger.update();
@@ -25,14 +19,22 @@ export default function useSmoothScroll() {
 
     lenis.on("scroll", handleScroll);
 
-    gsap.ticker.add(update);
+    const raf = (time) => {
+      lenis.raf(time * 1000);
+    };
+
+    gsap.ticker.add(raf);
 
     gsap.ticker.lagSmoothing(0);
 
     return () => {
       lenis.off("scroll", handleScroll);
-      gsap.ticker.remove(update);
+
+      gsap.ticker.remove(raf);
+
       lenis.destroy();
     };
   }, []);
 }
+
+export default useSmoothScroll;

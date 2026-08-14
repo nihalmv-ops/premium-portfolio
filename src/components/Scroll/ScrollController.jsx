@@ -1,17 +1,22 @@
 import { useEffect } from "react";
-import useSmoothScroll from "../../hooks/useSmoothScroll";
-import { initScrollAnimations } from "../../animations/scrollAnimations";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function ScrollController() {
-  useSmoothScroll();
-
   useEffect(() => {
-    const cleanup = initScrollAnimations();
+    const refreshScroll = () => {
+      ScrollTrigger.refresh();
+    };
+
+    window.addEventListener("load", refreshScroll);
+
+    // Initial refresh
+    ScrollTrigger.refresh();
 
     return () => {
-      if (cleanup) {
-        cleanup();
-      }
+      window.removeEventListener("load", refreshScroll);
     };
   }, []);
 
