@@ -1,10 +1,11 @@
 import JungleScene from "./components/JungleScene/JungleScene";
-
+import ScrollController from "./components/Scroll/ScrollController";
 function App() {
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-[#050805] text-stone-100">
 
-      {/* 3D Background */}
+      <ScrollController />
+
       <JungleScene />
 
       {/* Content */}
