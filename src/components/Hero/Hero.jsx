@@ -1,222 +1,181 @@
 import "./Hero.css";
-
 import { motion } from "framer-motion";
-
-import SlideLeft from "../Animation/SlideLeft";
-import SlideRight from "../Animation/SlideRight";
-
-import {
-  FaArrowRight,
-  FaDownload
-} from "react-icons/fa";
-
+import { FaArrowRight, FaDownload } from "react-icons/fa";
 
 function Hero() {
-
   return (
-
     <section className="hero" id="home">
-
       <div className="container hero-container">
 
-
         {/* LEFT SIDE */}
+        <motion.div
+          className="hero-content"
+          initial={{ opacity: 0, x: -80 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            duration: 0.8,
+            ease: "easeOut",
+          }}
+        >
+          {/* Availability Badge */}
+          <motion.div
+            className="hero-badge"
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.3,
+              duration: 0.6,
+            }}
+          >
+            <span className="status-dot" />
+            Available For Work
+          </motion.div>
 
-        <SlideLeft>
+          {/* Heading */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.4,
+              duration: 0.7,
+            }}
+          >
+            Frontend
+            <br />
+            <span>React Developer</span>
+          </motion.h1>
 
-          <div className="hero-content">
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.5,
+              duration: 0.7,
+            }}
+          >
+            I build modern, responsive and high-performance
+            web applications using React, JavaScript and
+            modern web technologies.
+          </motion.p>
 
-
-            <motion.div
-              className="hero-badge"
-
-              initial={{
-                opacity:0,
-                y:-30
-              }}
-
-              animate={{
-                opacity:1,
-                y:0
-              }}
-
-              transition={{
-                delay:.4,
-                duration:.6
-              }}
+          {/* Buttons */}
+          <motion.div
+            className="hero-buttons"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.7,
+              duration: 0.7,
+            }}
+          >
+            <a
+              href="#projects"
+              className="btn btn-primary"
             >
+              View Projects
+              <FaArrowRight />
+            </a>
 
-              <span></span>
-
-              Available For Work
-
-            </motion.div>
-
-
-
-            <h1>
-
-              Frontend
-
-              <br />
-
-              <span>
-                React Developer
-              </span>
-
-            </h1>
-
-
-
-            <p>
-
-              I build modern, responsive and
-              high-performance web applications
-              using React, JavaScript and modern
-              website technologies.
-
-            </p>
-
-
-
-            <motion.div
-
-              className="hero-buttons"
-
-              initial={{
-                opacity:0,
-                y:40
-              }}
-
-              animate={{
-                opacity:1,
-                y:0
-              }}
-
-              transition={{
-                delay:.6,
-                duration:.7
-              }}
-
+            <a
+              href="/resume.pdf"
+              className="btn btn-secondary"
+              target="_blank"
+              rel="noopener noreferrer"
             >
+              Resume
+              <FaDownload />
+            </a>
+          </motion.div>
 
-
-              <a
-                href="#projects"
-                className="btn btn-primary"
-              >
-
-                View Projects
-
-                <FaArrowRight />
-
-              </a>
-
-
-
-              <a
-                href="/resume.pdf"
-                className="btn btn-secondary"
-              >
-
-                Resume
-
-                <FaDownload />
-
-              </a>
-
-
-            </motion.div>
-
-
-          </div>
-
-
-        </SlideLeft>
-
-
-
-
+          {/* Tech Stack */}
+          <motion.div
+            className="hero-tech"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              delay: 1,
+              duration: 0.8,
+            }}
+          >
+            <span>React</span>
+            <span>JavaScript</span>
+            <span>Tailwind</span>
+            <span>Git</span>
+          </motion.div>
+        </motion.div>
 
         {/* RIGHT SIDE */}
+        <motion.div
+          className="hero-code"
+          initial={{ opacity: 0, x: 80, scale: 0.95 }}
+          animate={{ opacity: 1, x: 0, scale: 1 }}
+          transition={{
+            delay: 0.3,
+            duration: 0.9,
+            ease: "easeOut",
+          }}
+        >
+          <motion.div
+            className="code-window"
+            animate={{
+              y: [0, -12, 0],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            {/* Window Header */}
+            <div className="window-top">
+              <span className="window-red" />
+              <span className="window-yellow" />
+              <span className="window-green" />
 
-
-        <SlideRight>
-
-
-          <div className="hero-code">
-
-
-            <motion.div
-
-              className="code-window"
-
-
-              animate={{
-
-                y:[0,-12,0]
-
-              }}
-
-
-              transition={{
-
-                duration:5,
-
-                repeat:Infinity,
-
-                ease:"easeInOut"
-
-              }}
-
-            >
-
-
-              <div className="window-top">
-
-                <span></span>
-
-                <span></span>
-
-                <span></span>
-
+              <div className="window-title">
+                developer.jsx
               </div>
+            </div>
 
-
-
-<pre>
-{`import React from "react";
+            {/* Code */}
+            <pre>
+              <code>{`import React from "react";
 
 const Developer = () => {
+  return (
+    <Portfolio
+      name="Nihal MV"
+      role="React Developer"
+    />
+  );
+};
 
- return (
-   <Portfolio />
- );
+export default Developer;`}</code>
+            </pre>
 
-}
-
-export default Developer;`}
-</pre>
-
-
-            </motion.div>
-
-
-          </div>
-
-
-        </SlideRight>
-
-
+            {/* Code Status */}
+            <div className="code-status">
+              <span />
+              Building digital experiences...
+            </div>
+          </motion.div>
+        </motion.div>
 
       </div>
 
-
+      {/* Scroll Indicator */}
+      <motion.div
+        className="hero-scroll"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+      >
+        <span>Scroll to explore</span>
+        <div className="scroll-line" />
+      </motion.div>
     </section>
-
   );
-
 }
-
 
 export default Hero;

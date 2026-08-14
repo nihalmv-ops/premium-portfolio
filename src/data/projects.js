@@ -88,7 +88,7 @@ const projects = [
     id: 4,
     featured: true,
 
-    title: "Hospital & Dental Care Website",
+    title: "GoTravel - Travel Booking Website",
 
     description:
       "A modern, responsive healthcare website designed to provide patients with a smooth and professional online experience.",
